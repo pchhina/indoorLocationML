@@ -1,0 +1,11 @@
+Package: indoorLocation
+Title: Predicts Indoor Location of a Subject based on WIFI Fingerprint
+Version: 0.1
+Authors@R: person("Paramjot", "Singh", email = "param.chhina@gmail.com", role = c("aut", "cre"))
+Description: This package uses indoor location dataset (https://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc#) for exploring different models to predict the indoor location of a subject relying on a WLAN/WIFI fingerprinting technology.
+Depends: R (>= 3.4.3)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
