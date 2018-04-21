@@ -9,3 +9,14 @@ Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+
+### Main Goals
+
+- Get the data
+- Carry out EDA to explore the data
+- Fit candidate models
+- Select top 2 or 3 models to evalutate performance on test set
+- Select the best model
+- Design the app
+- Implement the best model in app
+- Test and launch
