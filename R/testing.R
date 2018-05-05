@@ -1,0 +1,6 @@
+library(tidyverse)
+library(caret)
+library(tictoc)
+library(corrplot)
+library(e1071)
+testingData <- read_csv("../inst/extdata/UJIndoorLoc/validationData.csv")

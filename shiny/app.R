@@ -15,19 +15,23 @@ server <- function(input, output) {
     output$point <- renderPlot({
     obsLong <- sampleData()$LONGITUDE
     predLong <- predict(rfFit,sampleData())
+    obsLat <- sampleData()$LATITUDE
+    predLat <- predict(rfFitLat, sampleData())
     df <- data.frame(cat = c("obs", "pred"),
                      long = c(obsLong, predLong),
-                     lat = c(sampleData()$LATITUDE, sampleData()$LATITUDE))
+                     lat = c(obsLat, predLat))
     ggplot(data = df, aes(long, lat)) +
                geom_point(shape = 21,
                           color = "yellow",
                           fill = "black",
                           size = 5,
                           stroke = 2) +
-               scale_x_continuous(limits = c(-7695.9, -7299.9)) +
-               scale_y_continuous(limits = c(4864745.7, 4865017.4)) +
+               scale_x_continuous(limits = c(-7696, -7300),
+                                  minor_breaks = seq(-7700, -7300, by = 20)) +
+               scale_y_continuous(limits = c(4864745, 4865017),
+                                  minor_breaks = seq(4864740, 4865020, by = 20)) +
                theme(panel.background = element_rect(fill = "black"),
-                     panel.grid.major = element_blank(),
+                     panel.grid.major = element_line(color = "grey"),
                      panel.grid.minor = element_line(color = "grey"))
     })
 }
